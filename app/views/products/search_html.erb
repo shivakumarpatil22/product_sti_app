@@ -1,0 +1,29 @@
+<%= form_tag "/search" do %>
+  <%= text_field_tag "search_text" %>
+  <%= button_tag "Search" %>
+<% end %>
+
+
+<table class='table'>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Price</th>
+      <th>Type</th>
+      <th>Inward Date</th>
+      <th>Color</th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @products.each do |product| %>
+      <tr>
+        <td><%= product.name %></td>
+        <td><%= product.price %></td>
+        <td><%= product.type %></td>
+        <td><%= product.inward_date %></td>
+        <td><%= product.color %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
